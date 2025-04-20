@@ -1,0 +1,1032 @@
+/* 自定义样式 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* 平滑过渡效果 */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* 图片悬停效果 */
+.image-hover {
+    overflow: hidden;
+}
+
+.image-hover img {
+    transition: transform 0.5s ease;
+}
+
+.image-hover:hover img {
+    transform: scale(1.1);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* 暗色模式滚动条 */
+.dark ::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4a5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* 页面加载动画 */
+.page-transition {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 导航栏样式 */
+nav {
+    @apply fixed top-0 left-0 right-0 z-[9999] bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm;
+    transition: all 0.3s ease;
+}
+
+.dark nav {
+    @apply bg-gray-900/90 border-gray-700/50;
+}
+
+/* 导航栏滚动效果 */
+.nav-scrolled {
+    @apply shadow-lg;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .nav-scrolled {
+    background-color: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* 按钮悬停效果 */
+.btn-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hover:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-hover:hover:after {
+    width: 300%;
+    height: 300%;
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+    @apply transform transition-all duration-300;
+}
+
+.card-hover:hover {
+    @apply -translate-y-1 shadow-lg;
+}
+
+/* 图片加载动画 */
+.image-loading {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero-section {
+        @apply flex-col;
+    }
+    
+    .hero-content {
+        @apply w-full text-center;
+    }
+    
+    .hero-image {
+        @apply w-full mt-8;
+    }
+}
+
+/* 暗色模式优化 */
+.dark {
+    color-scheme: dark;
+}
+
+.dark img {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* 技能卡片动画 */
+.skill-card {
+    @apply transform transition-all duration-300;
+}
+
+.skill-card:hover {
+    @apply -translate-y-2 shadow-xl;
+}
+
+/* 博客卡片样式 */
+.blog-card {
+    @apply transform transition-all duration-300;
+}
+
+.blog-card:hover {
+    @apply -translate-y-1 shadow-lg;
+}
+
+/* 作品集卡片样式 */
+.portfolio-card {
+    @apply transform transition-all duration-300;
+}
+
+.portfolio-card:hover {
+    @apply -translate-y-1 shadow-lg;
+}
+
+/* 联系表单样式 */
+.contact-form input,
+.contact-form textarea {
+    @apply transition-all duration-300;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    @apply ring-2 ring-indigo-500;
+}
+
+/* 按钮样式 */
+.btn {
+    @apply transform transition-all duration-300;
+}
+
+.btn:hover {
+    @apply -translate-y-0.5 shadow-md;
+}
+
+/* 社交媒体图标悬停效果 */
+.social-icon {
+    @apply transform transition-all duration-300;
+}
+
+.social-icon:hover {
+    @apply -translate-y-1 scale-110;
+}
+
+/* 主题切换过渡效果 */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* 移动端菜单过渡效果 */
+#mobile-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#mobile-menu:not(.hidden) {
+    opacity: 1;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* 页面加载动画 */
+.page-transition {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 主题切换按钮动画 */
+#theme-toggle {
+    @apply transform transition-all duration-300;
+}
+
+#theme-toggle:hover {
+    @apply scale-110;
+}
+
+/* 暗色模式文本颜色优化 */
+.dark {
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --text-tertiary: #9ca3af;
+}
+
+/* 暗色模式背景颜色优化 */
+.dark {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+}
+
+/* 暗色模式边框颜色优化 */
+.dark {
+    --border-primary: #374151;
+    --border-secondary: #4b5563;
+}
+
+/* 暗色模式阴影优化 */
+.dark {
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 暗色模式卡片背景优化 */
+.dark .card {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-primary);
+}
+
+/* 暗色模式链接颜色优化 */
+.dark a {
+    color: var(--text-primary);
+}
+
+.dark a:hover {
+    color: var(--text-secondary);
+}
+
+/* 暗色模式按钮优化 */
+.dark .btn-primary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.dark .btn-primary:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* 暗色模式表单元素优化 */
+.dark input,
+.dark textarea,
+.dark select {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+    border-color: var(--border-secondary);
+    box-shadow: 0 0 0 2px var(--border-secondary);
+}
+
+/* 基础样式 */
+:root {
+    /* 亮色模式变量 */
+    --light-bg-primary: #ffffff;
+    --light-bg-secondary: #f3f4f6;
+    --light-bg-tertiary: #e5e7eb;
+    --light-text-primary: #111827;
+    --light-text-secondary: #4b5563;
+    --light-text-tertiary: #6b7280;
+    --light-border-primary: #e5e7eb;
+    --light-border-secondary: #d1d5db;
+    --light-shadow-color: rgba(0, 0, 0, 0.1);
+    
+    /* 暗色模式变量 */
+    --dark-bg-primary: #111827;
+    --dark-bg-secondary: #1f2937;
+    --dark-bg-tertiary: #374151;
+    --dark-text-primary: #f3f4f6;
+    --dark-text-secondary: #d1d5db;
+    --dark-text-tertiary: #9ca3af;
+    --dark-border-primary: #374151;
+    --dark-border-secondary: #4b5563;
+    --dark-shadow-color: rgba(0, 0, 0, 0.3);
+    
+    /* 过渡效果 */
+    --transition-duration: 0.3s;
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 亮色模式基础样式 */
+body {
+    background-color: var(--light-bg-primary);
+    color: var(--light-text-primary);
+}
+
+/* 暗色模式基础样式 */
+.dark {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+/* 导航栏样式 */
+nav {
+    @apply fixed top-0 left-0 right-0 z-[9999] bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm;
+    transition: all 0.3s ease;
+}
+
+.dark nav {
+    @apply bg-gray-900/90 border-gray-700/50;
+}
+
+/* 导航链接样式 */
+.nav-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 relative px-3 py-2 rounded-lg;
+}
+
+.nav-link::before {
+    @apply content-[''] absolute inset-0 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg transition-all duration-300 opacity-0;
+}
+
+.nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 dark:bg-indigo-400 transition-all duration-300 opacity-0;
+}
+
+.nav-link:hover::before {
+    @apply opacity-100;
+}
+
+.nav-link:hover::after {
+    @apply opacity-100;
+}
+
+.nav-link.active {
+    @apply text-indigo-600 dark:text-indigo-400 font-bold;
+}
+
+.nav-link.active::before {
+    @apply opacity-100 bg-indigo-200 dark:bg-indigo-800/50;
+}
+
+.nav-link.active::after {
+    @apply opacity-100 h-1;
+}
+
+.nav-link.active i {
+    @apply text-indigo-600 dark:text-indigo-400;
+}
+
+/* 当前页面高亮样式 */
+.nav-link[data-page="index"].active,
+.nav-link[data-page="about"].active,
+.nav-link[data-page="blog"].active,
+.nav-link[data-page="portfolio"].active,
+.nav-link[data-page="gallery"].active,
+.nav-link[data-page="contact"].active {
+    @apply text-indigo-600 dark:text-indigo-400 font-medium;
+}
+
+.nav-link[data-page="index"].active::after,
+.nav-link[data-page="about"].active::after,
+.nav-link[data-page="blog"].active::after,
+.nav-link[data-page="portfolio"].active::after,
+.nav-link[data-page="gallery"].active::after,
+.nav-link[data-page="contact"].active::after {
+    @apply w-full;
+}
+
+/* 移动端导航链接样式 */
+.mobile-nav-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 relative px-4 py-3 rounded-lg;
+}
+
+.mobile-nav-link::before {
+    @apply content-[''] absolute inset-0 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg transition-all duration-300 opacity-0;
+}
+
+.mobile-nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 dark:bg-indigo-400 transition-all duration-300 opacity-0;
+}
+
+.mobile-nav-link:hover::before {
+    @apply opacity-100;
+}
+
+.mobile-nav-link:hover::after {
+    @apply opacity-100;
+}
+
+.mobile-nav-link.active {
+    @apply text-indigo-600 dark:text-indigo-400 font-bold;
+}
+
+.mobile-nav-link.active::before {
+    @apply opacity-100 bg-indigo-200 dark:bg-indigo-800/50;
+}
+
+.mobile-nav-link.active::after {
+    @apply opacity-100 h-1;
+}
+
+.mobile-nav-link.active i {
+    @apply text-indigo-600 dark:text-indigo-400;
+}
+
+/* 移动端菜单样式 */
+.mobile-menu-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 hidden;
+}
+
+.mobile-menu-overlay.active {
+    @apply block;
+}
+
+.mobile-menu {
+    @apply fixed top-0 right-0 w-64 h-full bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 translate-x-full;
+}
+
+.mobile-menu.active {
+    @apply translate-x-0;
+}
+
+/* 卡片样式 */
+.card {
+    background-color: var(--light-bg-primary);
+    border: 1px solid var(--light-border-primary);
+    box-shadow: 0 1px 3px 0 var(--light-shadow-color);
+}
+
+.dark .card {
+    background-color: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border-primary);
+    box-shadow: 0 1px 3px 0 var(--dark-shadow-color);
+}
+
+/* 按钮样式 */
+.btn {
+    background-color: var(--light-bg-secondary);
+    color: var(--light-text-primary);
+    border: 1px solid var(--light-border-primary);
+}
+
+.dark .btn {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border-primary);
+}
+
+/* 链接样式 */
+a {
+    color: var(--light-text-primary);
+}
+
+.dark a {
+    color: var(--dark-text-primary);
+}
+
+a:hover {
+    color: var(--light-text-secondary);
+}
+
+.dark a:hover {
+    color: var(--dark-text-secondary);
+}
+
+/* 表单元素样式 */
+input,
+textarea,
+select {
+    background-color: var(--light-bg-primary);
+    border: 1px solid var(--light-border-primary);
+    color: var(--light-text-primary);
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+    background-color: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border-primary);
+    color: var(--dark-text-primary);
+}
+
+/* 图片样式 */
+img {
+    filter: brightness(1) contrast(1);
+}
+
+.dark img {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* 主题切换按钮样式 */
+#theme-toggle {
+    background-color: var(--light-bg-secondary);
+    color: var(--light-text-primary);
+}
+
+.dark #theme-toggle {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+}
+
+/* 移动端菜单样式 */
+#mobile-menu {
+    background-color: var(--light-bg-primary);
+    border: 1px solid var(--light-border-primary);
+}
+
+.dark #mobile-menu {
+    background-color: var(--dark-bg-primary);
+    border: 1px solid var(--dark-border-primary);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--light-bg-secondary);
+    border-top: 1px solid var(--light-border-primary);
+}
+
+.dark footer {
+    background-color: var(--dark-bg-secondary);
+    border-top: 1px solid var(--dark-border-primary);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--light-bg-secondary);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background-color: var(--dark-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--light-border-primary);
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-border-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--light-border-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dark-border-secondary);
+}
+
+/* 页面加载动画 */
+.page-transition {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero-section {
+        @apply flex-col;
+    }
+    
+    .hero-content {
+        @apply w-full text-center;
+    }
+    
+    .hero-image {
+        @apply w-full mt-8;
+    }
+}
+
+/* 移动端菜单动画 */
+#mobile-menu.show {
+    @apply block;
+}
+
+#mobile-menu.show > div:last-child {
+    @apply translate-x-0;
+}
+
+#mobile-menu:not(.show) > div:last-child {
+    @apply translate-x-full;
+}
+
+/* 深色模式基础样式 */
+.dark {
+    color-scheme: dark;
+}
+
+.dark body {
+    @apply bg-gray-900 text-gray-100;
+}
+
+/* 深色模式导航栏 */
+.dark nav {
+    @apply bg-gray-900/90 border-gray-800/50;
+}
+
+.dark .nav-link {
+    @apply text-gray-300 hover:text-indigo-400;
+}
+
+.dark .nav-link::before {
+    @apply bg-indigo-900/30;
+}
+
+.dark .nav-link::after {
+    @apply bg-indigo-400;
+}
+
+.dark .nav-link.active {
+    @apply text-indigo-400;
+}
+
+.dark .nav-link.active::before {
+    @apply bg-indigo-800/50;
+}
+
+/* 深色模式移动菜单 */
+.dark #mobile-menu {
+    @apply bg-black/50;
+}
+
+.dark #mobile-menu > div {
+    @apply bg-gray-900;
+}
+
+.dark .mobile-nav-link {
+    @apply text-gray-300 hover:text-indigo-400;
+}
+
+.dark .mobile-nav-link::before {
+    @apply bg-indigo-900/30;
+}
+
+.dark .mobile-nav-link::after {
+    @apply bg-indigo-400;
+}
+
+.dark .mobile-nav-link.active {
+    @apply text-indigo-400;
+}
+
+.dark .mobile-nav-link.active::before {
+    @apply bg-indigo-800/50;
+}
+
+/* 深色模式按钮 */
+.dark #theme-toggle,
+.dark #mobile-menu-button,
+.dark #close-menu {
+    @apply text-gray-300 hover:bg-gray-800;
+}
+
+/* 深色模式卡片 */
+.dark .blog-card,
+.dark .portfolio-card,
+.dark .skill-card {
+    @apply bg-gray-800 border-gray-700;
+}
+
+.dark .blog-card:hover,
+.dark .portfolio-card:hover,
+.dark .skill-card:hover {
+    @apply bg-gray-700;
+}
+
+/* 深色模式文本 */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-white;
+}
+
+.dark p, .dark span, .dark li {
+    @apply text-gray-300;
+}
+
+/* 深色模式链接 */
+.dark a {
+    @apply text-indigo-400 hover:text-indigo-300;
+}
+
+/* 深色模式图片 */
+.dark img {
+    @apply brightness-90;
+}
+
+/* 深色模式滚动条 */
+.dark ::-webkit-scrollbar {
+    @apply w-2;
+}
+
+.dark ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-full;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+}
+
+/* 深色模式表单元素 */
+.dark input,
+.dark textarea,
+.dark select {
+    @apply bg-gray-800 border-gray-700 text-gray-100;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+    @apply border-indigo-500 ring-indigo-500;
+}
+
+/* 深色模式按钮 */
+.dark .btn {
+    @apply bg-gray-800 text-gray-100 border-gray-700;
+}
+
+.dark .btn:hover {
+    @apply bg-gray-700;
+}
+
+.dark .btn-primary {
+    @apply bg-indigo-600 text-white;
+}
+
+.dark .btn-primary:hover {
+    @apply bg-indigo-500;
+}
+
+/* 深色模式页脚 */
+.dark footer {
+    @apply bg-gray-900 border-gray-800;
+}
+
+.dark footer a {
+    @apply text-gray-400 hover:text-indigo-400;
+}
+
+/* 深色模式代码块 */
+.dark pre {
+    @apply bg-gray-800 border-gray-700;
+}
+
+.dark code {
+    @apply bg-gray-800 text-gray-100;
+}
+
+/* 响应式布局优化 */
+@media (max-width: 768px) {
+    /* 导航栏优化 */
+    nav {
+        @apply px-4;
+    }
+
+    .nav-title {
+        @apply text-lg;
+    }
+
+    .nav-links {
+        @apply hidden;
+    }
+
+    #mobile-menu-button {
+        @apply block;
+    }
+
+    /* 移动菜单优化 */
+    #mobile-menu {
+        @apply w-full max-w-xs;
+    }
+
+    .mobile-nav-link {
+        @apply py-3 px-4 text-base;
+    }
+
+    .mobile-nav-link i {
+        @apply w-5 h-5;
+    }
+
+    /* 内容区域优化 */
+    .container {
+        @apply px-4;
+    }
+
+    /* 卡片布局优化 */
+    .blog-card,
+    .portfolio-card,
+    .skill-card {
+        @apply w-full;
+    }
+
+    /* 图片优化 */
+    img {
+        @apply w-full h-auto;
+    }
+
+    /* 按钮优化 */
+    .btn {
+        @apply w-full py-3 text-base;
+    }
+
+    /* 表单元素优化 */
+    input,
+    textarea,
+    select {
+        @apply w-full py-3 px-4 text-base;
+    }
+
+    /* 页脚优化 */
+    footer {
+        @apply px-4 py-6;
+    }
+
+    footer .container {
+        @apply flex-col items-center gap-4;
+    }
+
+    /* 深色模式移动端优化 */
+    .dark #mobile-menu {
+        @apply bg-gray-900/95;
+    }
+
+    .dark .mobile-nav-link {
+        @apply text-gray-200;
+    }
+
+    .dark .mobile-nav-link:hover {
+        @apply bg-gray-800;
+    }
+
+    /* 滚动条优化 */
+    ::-webkit-scrollbar {
+        @apply w-1;
+    }
+}
+
+/* 超窄屏幕优化 */
+@media (max-width: 480px) {
+    /* 导航栏进一步优化 */
+    nav {
+        @apply px-3;
+    }
+
+    .nav-title {
+        @apply text-base;
+    }
+
+    /* 移动菜单进一步优化 */
+    .mobile-nav-link {
+        @apply py-2.5 px-3 text-sm;
+    }
+
+    /* 内容区域进一步优化 */
+    .container {
+        @apply px-3;
+    }
+
+    /* 按钮进一步优化 */
+    .btn {
+        @apply py-2.5 text-sm;
+    }
+
+    /* 表单元素进一步优化 */
+    input,
+    textarea,
+    select {
+        @apply py-2.5 px-3 text-sm;
+    }
+
+    /* 页脚进一步优化 */
+    footer {
+        @apply px-3 py-4;
+    }
+
+    footer p {
+        @apply text-sm;
+    }
+}
+
+/* 横屏模式优化 */
+@media (max-height: 480px) and (orientation: landscape) {
+    #mobile-menu {
+        @apply h-full overflow-y-auto;
+    }
+
+    .mobile-nav-link {
+        @apply py-2;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) {
+    .nav-link:hover::before,
+    .nav-link:hover::after,
+    .mobile-nav-link:hover::before,
+    .mobile-nav-link:hover::after {
+        @apply opacity-0;
+    }
+
+    .nav-link:active::before,
+    .nav-link:active::after,
+    .mobile-nav-link:active::before,
+    .mobile-nav-link:active::after {
+        @apply opacity-100;
+    }
+
+    .btn:hover {
+        @apply transform-none;
+    }
+
+    .btn:active {
+        @apply scale-95;
+    }
+}
+
+/* 高对比度模式优化 */
+@media (prefers-contrast: more) {
+    .nav-link,
+    .mobile-nav-link {
+        @apply font-bold;
+    }
+
+    .btn {
+        @apply border-2;
+    }
+
+    .dark {
+        @apply bg-black text-white;
+    }
+
+    .dark .nav-link,
+    .dark .mobile-nav-link {
+        @apply text-white;
+    }
+} 

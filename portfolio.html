@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 | 个人博客</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- 导航栏占位符 -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 主要内容区域 -->
+    <main class="pt-24">
+        <div class="container mx-auto px-6 py-12">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">我的作品</h1>
+            
+            <!-- 作品分类标签 -->
+            <div class="flex flex-wrap gap-4 mb-8">
+                <button class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-colors duration-300">全部</button>
+                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">Web 应用</button>
+                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">移动应用</button>
+                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">开源项目</button>
+            </div>
+            
+            <!-- 作品展示网格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 作品卡片 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="项目预览" class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="p-6">
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">在线教育平台</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">一个基于微服务架构的在线教育平台，支持课程管理、视频直播、在线测试等功能。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">React</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Node.js</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 作品卡片 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="项目预览" class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="p-6">
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">智能家居控制系统</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">一个支持多设备接入的智能家居控制系统，提供远程控制、场景联动等功能。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Vue.js</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Python</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MQTT</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 作品卡片 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="项目预览" class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="p-6">
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">电商平台</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">一个完整的电商平台，包含商品管理、订单处理、支付系统等功能。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Angular</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Java</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MySQL</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-6 py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">我的博客</a>
+                    <p class="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400">分享我的技术见解、独立开发经验和生活点滴。</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8 md:gap-12">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">导航</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">首页</a></li>
+                            <li><a href="about.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">关于我</a></li>
+                            <li><a href="blog.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">博客</a></li>
+                            <li><a href="portfolio.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">作品集</a></li>
+                            <li><a href="gallery.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">相册</a></li>
+                            <li><a href="contact.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">联系我</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">社交媒体</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">GitHub</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Twitter</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">LinkedIn</a></li>
+                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">微博</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <p class="text-center text-sm text-gray-600 dark:text-gray-400">&copy; 2023 我的个人博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/load-components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
