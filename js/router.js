@@ -2,7 +2,23 @@ class Router {
     constructor() {
         this.routes = new Map();
         this.contentContainer = document.getElementById('content');
+        this.loadingOverlay = this.createLoadingOverlay();
         this.init();
+    }
+
+    createLoadingOverlay() {
+        const overlay = document.createElement('div');
+        overlay.id = 'loading-overlay';
+        overlay.className = 'fixed inset-0 bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 z-50 flex items-center justify-center transition-opacity duration-300';
+        overlay.innerHTML = `
+            <div class="flex flex-col items-center space-y-4">
+                <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                <p class="text-gray-700 dark:text-gray-300">加载中...</p>
+            </div>
+        `;
+        overlay.style.display = 'none';
+        document.body.appendChild(overlay);
+        return overlay;
     }
 
     init() {
@@ -50,6 +66,10 @@ class Router {
 
     async handleNavigation(path, addToHistory = true) {
         try {
+            // Show loading overlay
+            this.loadingOverlay.style.display = 'flex';
+            this.loadingOverlay.style.opacity = '1';
+
             // Show loading state
             if (this.contentContainer) {
                 this.contentContainer.style.opacity = '0';
@@ -71,6 +91,11 @@ class Router {
                 // Smooth transition
                 setTimeout(() => {
                     this.contentContainer.style.opacity = '1';
+                    // Hide loading overlay
+                    this.loadingOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        this.loadingOverlay.style.display = 'none';
+                    }, 300);
                 }, 50);
 
                 // Update the browser history
@@ -89,6 +114,11 @@ class Router {
             }
         } catch (error) {
             console.error('Error loading page:', error);
+            // Hide loading overlay on error
+            this.loadingOverlay.style.opacity = '0';
+            setTimeout(() => {
+                this.loadingOverlay.style.display = 'none';
+            }, 300);
         }
     }
 
