@@ -7,13 +7,118 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* 移动菜单按钮样式 */
+        .mobile-menu-button {
+            border: 2px solid red;
+            display: inline-block;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        
+        /* 移动菜单样式 */
+        .mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        
+        .mobile-menu.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body class="bg-white dark:bg-gray-900">
-    <!-- Navbar Placeholder -->
-    <div id="navbar-placeholder"></div>
+    <!-- 手动添加的导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm" id="main-nav">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-blue-600">
+                        <i class="fas fa-code text-2xl"></i>
+                        <span>我的博客</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-blog"></i>
+                        <span>博客</span>
+                    </a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-briefcase"></i>
+                        <span>作品集</span>
+                    </a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-images"></i>
+                        <span>相册</span>
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-envelope"></i>
+                        <span>联系</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="mobile-menu-button" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg p-3">
+                        <i class="fas fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg p-3">
+                        <i class="fas fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg p-3">
+                        <i class="fas fa-blog"></i>
+                        <span>博客</span>
+                    </a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg p-3">
+                        <i class="fas fa-briefcase"></i>
+                        <span>作品集</span>
+                    </a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg p-3">
+                        <i class="fas fa-images"></i>
+                        <span>相册</span>
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg p-3">
+                        <i class="fas fa-envelope"></i>
+                        <span>联系</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Content Container -->
-    <div id="content" class="transition-opacity duration-300">
+    <div id="content" class="transition-opacity duration-300 mt-20">
         <main>
             <!-- Hero Section -->
             <section class="relative py-20 overflow-hidden">
@@ -225,6 +330,36 @@
         </main>
     </div>
 
-    <script src="js/router.js"></script>
+    <script>
+    function toggleMobileMenu() {
+        console.log('触发 toggleMobileMenu 函数');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+            console.log('找到移动菜单元素');
+            mobileMenu.classList.toggle('show');
+            console.log(mobileMenu.classList.contains('show') ? '显示移动菜单' : '隐藏移动菜单');
+        } else {
+            console.error('未找到移动菜单元素');
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('页面加载完成');
+        
+        // 点击页面其他地方关闭菜单
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            
+            if (mobileMenu && mobileMenuButton && 
+                !mobileMenu.contains(e.target) && 
+                !mobileMenuButton.contains(e.target) && 
+                mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+                console.log('点击外部区域，关闭菜单');
+            }
+        });
+    });
+    </script>
 </body>
 </html> 

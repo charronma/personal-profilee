@@ -134,15 +134,20 @@ nav {
 /* 响应式调整 */
 @media (max-width: 768px) {
     .hero-section {
-        @apply flex-col;
+        padding: 4rem 1rem;
     }
     
-    .hero-content {
-        @apply w-full text-center;
+    footer {
+        padding-bottom: 4rem;
     }
     
-    .hero-image {
-        @apply w-full mt-8;
+    .mobile-menu {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .project-card, .blog-card, .photo-card {
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -593,72 +598,199 @@ img {
 
 /* 页脚样式 */
 footer {
-    background-color: var(--light-bg-secondary);
-    border-top: 1px solid var(--light-border-primary);
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: #e2e8f0;
+    padding: 3rem 0 2rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.dark footer {
-    background-color: var(--dark-bg-secondary);
-    border-top: 1px solid var(--dark-border-primary);
+footer h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: white;
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
-/* 滚动条样式 */
+footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 40px;
+    background: #4299e1;
+    border-radius: 1px;
+}
+
+footer p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+}
+
+footer a:hover {
+    color: #4299e1;
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+footer .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+footer .social-icon:hover {
+    background: #4299e1;
+    transform: translateY(-3px);
+}
+
+footer input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+footer input:focus {
+    border-color: #4299e1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+footer input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+footer button.btn {
+    background: #4299e1;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+footer button.btn:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+footer .border-t {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    footer {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    }
+    
+    footer .social-icon {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    footer input {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--light-bg-secondary);
-}
-
-.dark ::-webkit-scrollbar-track {
-    background-color: var(--dark-bg-secondary);
+    background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--light-border-primary);
-    border-radius: 4px;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-border-primary);
+    background: #94a3b8;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--light-border-secondary);
+    background: #64748b;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--dark-border-secondary);
+/* Dark Mode Scrollbar */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: #0f172a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #334155;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+    }
 }
 
-/* 页面加载动画 */
+/* Page Transition Animation */
 .page-transition {
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* 响应式调整 */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-section {
-        @apply flex-col;
+        padding: 4rem 1rem;
     }
     
-    .hero-content {
-        @apply w-full text-center;
+    footer {
+        padding-bottom: 4rem;
     }
     
-    .hero-image {
-        @apply w-full mt-8;
+    .mobile-menu {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .project-card, .blog-card, .photo-card {
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -824,15 +956,6 @@ footer {
     @apply bg-indigo-500;
 }
 
-/* 深色模式页脚 */
-.dark footer {
-    @apply bg-gray-900 border-gray-800;
-}
-
-.dark footer a {
-    @apply text-gray-400 hover:text-indigo-400;
-}
-
 /* 深色模式代码块 */
 .dark pre {
     @apply bg-gray-800 border-gray-700;
@@ -852,7 +975,7 @@ footer {
     .nav-title {
         @apply text-lg;
     }
-
+    
     .nav-links {
         @apply hidden;
     }
@@ -890,7 +1013,7 @@ footer {
     img {
         @apply w-full h-auto;
     }
-
+    
     /* 按钮优化 */
     .btn {
         @apply w-full py-3 text-base;
@@ -907,7 +1030,7 @@ footer {
     footer {
         @apply px-4 py-6;
     }
-
+    
     footer .container {
         @apply flex-col items-center gap-4;
     }
@@ -971,62 +1094,5 @@ footer {
 
     footer p {
         @apply text-sm;
-    }
-}
-
-/* 横屏模式优化 */
-@media (max-height: 480px) and (orientation: landscape) {
-    #mobile-menu {
-        @apply h-full overflow-y-auto;
-    }
-
-    .mobile-nav-link {
-        @apply py-2;
-    }
-}
-
-/* 触摸设备优化 */
-@media (hover: none) {
-    .nav-link:hover::before,
-    .nav-link:hover::after,
-    .mobile-nav-link:hover::before,
-    .mobile-nav-link:hover::after {
-        @apply opacity-0;
-    }
-
-    .nav-link:active::before,
-    .nav-link:active::after,
-    .mobile-nav-link:active::before,
-    .mobile-nav-link:active::after {
-        @apply opacity-100;
-    }
-
-    .btn:hover {
-        @apply transform-none;
-    }
-
-    .btn:active {
-        @apply scale-95;
-    }
-}
-
-/* 高对比度模式优化 */
-@media (prefers-contrast: more) {
-    .nav-link,
-    .mobile-nav-link {
-        @apply font-bold;
-    }
-
-    .btn {
-        @apply border-2;
-    }
-
-    .dark {
-        @apply bg-black text-white;
-    }
-
-    .dark .nav-link,
-    .dark .mobile-nav-link {
-        @apply text-white;
     }
 } 

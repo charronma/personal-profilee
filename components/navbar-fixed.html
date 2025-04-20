@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人博客</title>
-    <script>
-        console.log('Head script started');
-        
-        function handleMobileMenu() {
-            console.log('Mobile menu button clicked');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu) {
-                if (mobileMenu.classList.contains('show')) {
-                    mobileMenu.classList.remove('show');
-                    mobileMenu.classList.add('hide');
-                } else {
-                    mobileMenu.classList.remove('hide');
-                    mobileMenu.classList.add('show');
-                }
-            }
-        }
-    </script>
-</head>
-<body>
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="main-nav">
     <div class="container mx-auto px-6">
@@ -108,11 +83,6 @@
 </nav>
 
 <style>
-/* 调试样式 */
-#mobile-menu-button {
-    border: 2px solid red;
-}
-
 /* 导航链接样式 */
 .nav-link, .mobile-nav-link {
     position: relative;
@@ -205,28 +175,6 @@
 </style>
 
 <script>
-console.log('Body script started');
-
-// 直接添加一个全局函数来处理移动菜单切换
-function toggleMobileMenu() {
-    console.log('toggleMobileMenu 函数被调用');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (!mobileMenu) {
-        console.error('移动菜单未找到');
-        return;
-    }
-    
-    if (mobileMenu.classList.contains('show')) {
-        console.log('隐藏移动菜单');
-        mobileMenu.classList.remove('show');
-        mobileMenu.classList.add('hide');
-    } else {
-        console.log('显示移动菜单');
-        mobileMenu.classList.remove('hide');
-        mobileMenu.classList.add('show');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log('导航栏组件加载完成');
     
@@ -297,8 +245,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-console.log('Body script finished');
-</script>
-</body>
-</html> 
+</script> 
