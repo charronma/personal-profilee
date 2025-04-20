@@ -1,95 +1,120 @@
-<!-- 导航栏组件 -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm">
-    <div class="container mx-auto px-4 sm:px-6">
-        <div class="flex items-center justify-between h-16">
-            <!-- 网站标题 -->
-            <a href="index.html" class="text-lg sm:text-xl font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">
-                <i class="fas fa-code mr-2"></i>个人博客
-            </a>
-
-            <!-- 桌面导航 -->
-            <div class="hidden md:flex items-center space-x-4 sm:space-x-8">
-                <a href="index.html" class="nav-link px-2 sm:px-3 py-2 rounded-lg transition-all duration-300" data-page="index">
-                    <i class="fas fa-home mr-2"></i>首页
-                </a>
-                <a href="about.html" class="nav-link px-2 sm:px-3 py-2 rounded-lg transition-all duration-300" data-page="about">
-                    <i class="fas fa-user mr-2"></i>关于我
-                </a>
-                <a href="blog.html" class="nav-link px-2 sm:px-3 py-2 rounded-lg transition-all duration-300" data-page="blog">
-                    <i class="fas fa-blog mr-2"></i>博客
-                </a>
-                <a href="portfolio.html" class="nav-link px-2 sm:px-3 py-2 rounded-lg transition-all duration-300" data-page="portfolio">
-                    <i class="fas fa-briefcase mr-2"></i>作品集
-                </a>
-                <a href="gallery.html" class="nav-link px-2 sm:px-3 py-2 rounded-lg transition-all duration-300" data-page="gallery">
-                    <i class="fas fa-images mr-2"></i>相册
-                </a>
-                <a href="contact.html" class="nav-link px-2 sm:px-3 py-2 rounded-lg transition-all duration-300" data-page="contact">
-                    <i class="fas fa-envelope mr-2"></i>联系我
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客</title>
+    <script>
+        console.log('Head script started');
+        
+        function handleMobileMenu() {
+            console.log('Mobile menu button clicked');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                if (mobileMenu.classList.contains('show')) {
+                    mobileMenu.classList.remove('show');
+                    mobileMenu.classList.add('hide');
+                } else {
+                    mobileMenu.classList.remove('hide');
+                    mobileMenu.classList.add('show');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="main-nav">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                    <i class="fas fa-code text-2xl"></i>
+                    <span>我的博客</span>
                 </a>
             </div>
 
-            <!-- 主题切换和移动菜单按钮 -->
-            <div class="flex items-center space-x-2 sm:space-x-4">
-                <button id="theme-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
-                    <i class="fas fa-sun dark:hidden"></i>
-                    <i class="fas fa-moon hidden dark:block"></i>
-                </button>
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
-                    <i class="fas fa-bars"></i>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-home w-5 text-center"></i>
+                    <span>首页</span>
+                </a>
+                <a href="about.html" class="nav-link flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-user w-5 text-center"></i>
+                    <span>关于</span>
+                </a>
+                <a href="blog.html" class="nav-link flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-blog w-5 text-center"></i>
+                    <span>博客</span>
+                </a>
+                <a href="portfolio.html" class="nav-link flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-briefcase w-5 text-center"></i>
+                    <span>作品集</span>
+                </a>
+                <a href="gallery.html" class="nav-link flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-images w-5 text-center"></i>
+                    <span>相册</span>
+                </a>
+                <a href="contact.html" class="nav-link flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    <i class="fas fa-envelope w-5 text-center"></i>
+                    <span>联系</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex md:hidden">
+                <button id="mobile-menu-button" class="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none transition-colors duration-300 border-2 border-red-500">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 移动菜单 -->
-    <div id="mobile-menu" class="md:hidden fixed inset-0 z-40 hidden">
-        <!-- 背景遮罩 -->
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-        <!-- 菜单内容 -->
-        <div class="absolute left-0 top-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 -translate-x-full">
-            <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
-                <span class="text-lg font-semibold text-gray-900 dark:text-white">菜单</span>
-                <button id="close-menu" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="flex flex-col space-y-2 sm:space-y-4 p-4">
-                <a href="index.html" class="mobile-nav-link px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300" data-page="index">
-                    <i class="fas fa-home mr-2 sm:mr-3"></i>首页
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden absolute top-20 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg opacity-0 invisible transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="mobile-nav-link flex items-center space-x-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-home w-6 text-center"></i>
+                    <span>首页</span>
                 </a>
-                <a href="about.html" class="mobile-nav-link px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300" data-page="about">
-                    <i class="fas fa-user mr-2 sm:mr-3"></i>关于我
+                <a href="about.html" class="mobile-nav-link flex items-center space-x-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-user w-6 text-center"></i>
+                    <span>关于</span>
                 </a>
-                <a href="blog.html" class="mobile-nav-link px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300" data-page="blog">
-                    <i class="fas fa-blog mr-2 sm:mr-3"></i>博客
+                <a href="blog.html" class="mobile-nav-link flex items-center space-x-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-blog w-6 text-center"></i>
+                    <span>博客</span>
                 </a>
-                <a href="portfolio.html" class="mobile-nav-link px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300" data-page="portfolio">
-                    <i class="fas fa-briefcase mr-2 sm:mr-3"></i>作品集
+                <a href="portfolio.html" class="mobile-nav-link flex items-center space-x-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-briefcase w-6 text-center"></i>
+                    <span>作品集</span>
                 </a>
-                <a href="gallery.html" class="mobile-nav-link px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300" data-page="gallery">
-                    <i class="fas fa-images mr-2 sm:mr-3"></i>相册
+                <a href="gallery.html" class="mobile-nav-link flex items-center space-x-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-images w-6 text-center"></i>
+                    <span>相册</span>
                 </a>
-                <a href="contact.html" class="mobile-nav-link px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300" data-page="contact">
-                    <i class="fas fa-envelope mr-2 sm:mr-3"></i>联系我
+                <a href="contact.html" class="mobile-nav-link flex items-center space-x-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-envelope w-6 text-center"></i>
+                    <span>联系</span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
 
-<!-- 回到顶部按钮 -->
-<button id="back-to-top" class="fixed bottom-4 right-4 p-2 sm:p-3 rounded-full bg-indigo-600 dark:bg-indigo-500 text-white shadow-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 hidden">
-    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-    </svg>
-</button>
-
 <style>
+/* 调试样式 */
+#mobile-menu-button {
 /* 导航链接样式 */
 .nav-link, .mobile-nav-link {
     position: relative;
-    overflow: hidden;
+    padding: 0.5rem 0;
+    font-weight: 500;
 }
 
 .nav-link::after, .mobile-nav-link::after {
@@ -101,55 +126,156 @@
     height: 2px;
     background-color: currentColor;
     transform: scaleX(0);
+    transform-origin: right;
     transition: transform 0.3s ease;
 }
 
 .nav-link:hover::after, .mobile-nav-link:hover::after {
     transform: scaleX(1);
+    transform-origin: left;
 }
 
 .nav-link.active, .mobile-nav-link.active {
-    color: theme('colors.indigo.600');
-    background-color: theme('colors.indigo.50');
+    color: theme('colors.blue.600');
+    background-color: theme('colors.blue.50');
 }
 
 .nav-link.active::after, .mobile-nav-link.active::after {
     transform: scaleX(1);
-    background-color: theme('colors.indigo.600');
+    background-color: theme('colors.blue.600');
 }
 
 /* 暗色模式下的导航链接样式 */
 .dark .nav-link.active, .dark .mobile-nav-link.active {
-    color: theme('colors.indigo.400');
-    background-color: theme('colors.gray.800');
+    color: theme('colors.blue.400');
+    background-color: theme('colors.blue.900/20');
 }
 
 .dark .nav-link.active::after, .dark .mobile-nav-link.active::after {
-    background-color: theme('colors.indigo.400');
+    background-color: theme('colors.blue.400');
 }
 
 /* 移动菜单动画 */
 #mobile-menu {
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-#mobile-menu > div:last-child {
-    transition: transform 0.3s ease-in-out;
-}
-
-#mobile-menu:not(.hidden) {
+#mobile-menu.show {
     opacity: 1;
+    visibility: visible;
 }
 
-#mobile-menu.hidden {
+#mobile-menu.hide {
     opacity: 0;
+    visibility: hidden;
 }
 
-#mobile-menu > div:last-child.translate-x-0 {
-    transform: translateX(0);
+/* 滚动时导航栏样式 */
+.navbar-scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
 }
 
-#mobile-menu > div:last-child.-translate-x-full {
-    transform: translateX(-100%);
+.dark .navbar-scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-</style> 
+
+/* 移动菜单项样式 */
+.mobile-nav-link {
+    padding: 0.75rem 1rem;
+}
+
+/* 图标样式 */
+.nav-link i, .mobile-nav-link i {
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover i, .mobile-nav-link:hover i {
+    transform: scale(1.1);
+}
+
+/* 活动链接图标样式 */
+.nav-link.active i, .mobile-nav-link.active i {
+    transform: scale(1.1);
+    color: currentColor;
+}
+</style>
+
+<script>
+console.log('Body script started');
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('导航栏组件加载完成');
+    
+    const navbar = document.getElementById('main-nav');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    console.log('导航栏元素：', {
+        'navbar存在': !!navbar,
+        'mobileMenuButton存在': !!mobileMenuButton,
+        'mobileMenu存在': !!mobileMenu
+    });
+
+    // 处理滚动事件
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 0) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+
+    // 处理移动菜单
+    if (mobileMenuButton && mobileMenu) {
+        console.log('设置移动菜单按钮点击事件');
+        
+        mobileMenuButton.addEventListener('click', function(e) {
+            console.log('移动菜单按钮被点击');
+            e.preventDefault();
+            
+            if (mobileMenu.classList.contains('show')) {
+                console.log('隐藏移动菜单');
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.add('hide');
+            } else {
+                console.log('显示移动菜单');
+                mobileMenu.classList.remove('hide');
+                mobileMenu.classList.add('show');
+            }
+        });
+
+        // 点击菜单项时关闭移动菜单
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.add('hide');
+            });
+        });
+
+        // 点击页面其他地方时关闭菜单
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.add('hide');
+            }
+        });
+    } else {
+        console.error('移动菜单按钮或移动菜单未找到');
+    }
+
+    // 设置当前活动链接
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+});
+
+console.log('Body script finished');
+</script>
+</body>
+</html> 

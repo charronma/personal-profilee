@@ -1,267 +1,279 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人博客 | 首页</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        #mobile-menu-button {
+            border: 2px solid red;
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <!-- 导航栏 -->
     <div id="navbar-placeholder"></div>
-    <div class="pt-24">
-        <main class="pt-24">
-            <section class="relative bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20">
-                <div class="container mx-auto px-6">
+
+    <!-- 主要内容 -->
+    <div class="container mx-auto px-6 py-8 mt-20">
+        <main>
+            <!-- Hero Section -->
+            <section class="relative py-20 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"></div>
+                <div class="container mx-auto px-6 relative z-10">
                     <div class="flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 mb-10 md:mb-0">
-                            <h1 class="text-4xl md:text-5xl font-bold mb-6">欢迎来到我的个人空间</h1>
-                            <p class="text-xl mb-8 text-indigo-100">这里记录着我的技术探索、生活点滴和创作历程</p>
-                            <div class="flex space-x-4"><a href="about.html"
-                                    class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors duration-300">了解更多</a><a
-                                    href="contact.html"
-                                    class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300">联系我</a>
+                        <div class="md:w-1/2 mb-12 md:mb-0">
+                            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                                探索技术世界<br>
+                                <span class="text-blue-600 dark:text-blue-400">分享创新思维</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                                欢迎来到我的个人博客，这里记录了我的技术探索、项目经验和生活感悟。让我们一起在代码的世界里创造无限可能。
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="/about.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                    了解更多
+                                </a>
+                                <a href="/contact.html" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 transform hover:-translate-y-1">
+                                    联系我
+                                </a>
                             </div>
                         </div>
-                        <div class="md:w-1/2"><img
-                                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="个人照片" class="rounded-xl shadow-2xl"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="py-16">
-                <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">最新博客</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <article class="blog-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden"><img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="博客封面" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                                    <span>2023-04-19</span><span class="mx-2">•</span><span>技术</span></div>
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Golang 并发编程实践</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">深入探讨 Golang 的并发模型和最佳实践，包括
-                                    goroutine、channel 和 sync 包的使用。</p><a href="#"
-                                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">阅读更多
-                                    →</a>
-                            </div>
-                        </article>
-                        <article class="blog-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden"><img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="博客封面" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                                    <span>2023-04-18</span><span class="mx-2">•</span><span>架构</span></div>
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">微服务架构设计指南</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">分享微服务架构的设计原则、最佳实践和常见陷阱，帮助团队构建可扩展的系统。
-                                </p><a href="#"
-                                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">阅读更多
-                                    →</a>
-                            </div>
-                        </article>
-                        <article class="blog-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden"><img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="博客封面" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                                    <span>2023-04-17</span><span class="mx-2">•</span><span>DevOps</span></div>
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Kubernetes 部署最佳实践</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">详细介绍 Kubernetes
-                                    的部署策略、资源管理和监控方案，提高应用的可维护性。</p><a href="#"
-                                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">阅读更多
-                                    →</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="text-center mt-8"><a href="blog.html"
-                            class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300">查看所有文章</a>
-                    </div>
-                </div>
-            </section>
-            <section class="py-16 bg-gray-100 dark:bg-gray-800">
-                <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">精选作品</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="portfolio-card bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"><img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="项目预览" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">在线教育平台</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">一个基于微服务架构的在线教育平台，支持课程管理、视频直播、在线测试等功能。
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4"><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">React</span><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Node.js</span><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MongoDB</span>
-                                </div><a href="#"
-                                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情
-                                    →</a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"><img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="项目预览" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">智能家居控制系统</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">一个支持多设备接入的智能家居控制系统，提供远程控制、场景联动等功能。</p>
-                                <div class="flex flex-wrap gap-2 mb-4"><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Vue.js</span><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Python</span><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MQTT</span>
-                                </div><a href="#"
-                                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情
-                                    →</a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"><img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="项目预览" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">电商平台</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">一个完整的电商平台，包含商品管理、订单处理、支付系统等功能。</p>
-                                <div class="flex flex-wrap gap-2 mb-4"><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Angular</span><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Java</span><span
-                                        class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MySQL</span>
-                                </div><a href="#"
-                                    class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情
-                                    →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8"><a href="portfolio.html"
-                            class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300">查看所有作品</a>
-                    </div>
-                </div>
-            </section>
-            <section class="py-16">
-                <div class="container mx-auto px-6">
-                    <div class="flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 mb-10 md:mb-0"><img
-                                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="个人照片" class="rounded-full w-64 h-64 object-cover mx-auto md:mx-0"></div>
-                        <div class="md:w-1/2 md:pl-12">
-                            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">关于我</h2>
-                            <p class="text-gray-600 dark:text-gray-300 mb-6">我是一名全栈开发工程师，专注于构建现代化的 Web
-                                应用。拥有丰富的项目经验，擅长前端开发和后端架构设计。</p>
-                            <div class="grid grid-cols-2 gap-4 mb-8">
-                                <div>
-                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">技能</h3>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-center text-gray-600 dark:text-gray-300"><i
-                                                class="fas fa-check text-indigo-600 dark:text-indigo-400 mr-2"></i><span>前端开发</span>
-                                        </li>
-                                        <li class="flex items-center text-gray-600 dark:text-gray-300"><i
-                                                class="fas fa-check text-indigo-600 dark:text-indigo-400 mr-2"></i><span>后端开发</span>
-                                        </li>
-                                        <li class="flex items-center text-gray-600 dark:text-gray-300"><i
-                                                class="fas fa-check text-indigo-600 dark:text-indigo-400 mr-2"></i><span>DevOps</span>
-                                        </li>
-                                    </ul>
+                        <div class="md:w-1/2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80" 
+                                     alt="Hero Image" 
+                                     class="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">正在开发新项目</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">兴趣</h3>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-center text-gray-600 dark:text-gray-300"><i
-                                                class="fas fa-check text-indigo-600 dark:text-indigo-400 mr-2"></i><span>技术写作</span>
-                                        </li>
-                                        <li class="flex items-center text-gray-600 dark:text-gray-300"><i
-                                                class="fas fa-check text-indigo-600 dark:text-indigo-400 mr-2"></i><span>摄影</span>
-                                        </li>
-                                        <li class="flex items-center text-gray-600 dark:text-gray-300"><i
-                                                class="fas fa-check text-indigo-600 dark:text-indigo-400 mr-2"></i><span>旅行</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div><a href="about.html"
-                                class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300">了解更多</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="py-16 bg-gray-100 dark:bg-gray-800">
+
+            <!-- Latest Posts Section -->
+            <section class="py-20 bg-gray-50 dark:bg-gray-800">
                 <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">技术栈</h2>
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">最新博客文章</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">探索最新的技术见解和开发经验</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Blog Post 1 -->
+                        <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Blog Post 1" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                    <span>2024-03-15</span>
+                                    <span class="mx-2">•</span>
+                                    <span>技术</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">深入理解现代前端开发</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">探索前端开发的最新趋势和最佳实践，从框架选择到性能优化。</p>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center">
+                                    阅读更多
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Blog Post 2" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                    <span>2024-03-10</span>
+                                    <span class="mx-2">•</span>
+                                    <span>开发</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">构建高性能后端服务</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">学习如何设计和实现可扩展、高性能的后端服务架构。</p>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center">
+                                    阅读更多
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Blog Post 3" 
+                                 class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                    <span>2024-03-05</span>
+                                    <span class="mx-2">•</span>
+                                    <span>设计</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">用户体验设计原则</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">掌握核心的用户体验设计原则，打造直观易用的产品界面。</p>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center">
+                                    阅读更多
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Projects Section -->
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">精选项目</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">展示我的最新项目和开发成果</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="p-6">
+                                <div class="flex items-center space-x-2 mb-4">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">进行中</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">智能任务管理系统</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">基于AI的任务管理和自动化工作流系统，提高团队协作效率。</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">React</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">Node.js</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">MongoDB</span>
+                                </div>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center">
+                                    查看详情
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="p-6">
+                                <div class="flex items-center space-x-2 mb-4">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">已完成</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">数据分析平台</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">实时数据分析和可视化平台，支持多种数据源和自定义报表。</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">Python</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">Django</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">PostgreSQL</span>
+                                </div>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center">
+                                    查看详情
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="p-6">
+                                <div class="flex items-center space-x-2 mb-4">
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">规划中</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">智能家居控制系统</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">基于物联网的智能家居控制系统，支持多种设备接入和场景联动。</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">Rust</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">React Native</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm">MQTT</span>
+                                </div>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center">
+                                    查看详情
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="py-20 bg-gray-50 dark:bg-gray-800">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">技术专长</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">掌握多种技术栈，持续学习和进步</p>
+                    </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div class="skill-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center"><i
-                                class="fab fa-react text-5xl text-indigo-600 dark:text-indigo-400 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">React</h3>
-                            <p class="text-gray-600 dark:text-gray-300">前端开发</p>
+                        <!-- Skill 1 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-code text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">前端开发</h3>
+                            <p class="text-gray-600 dark:text-gray-300">React, Vue, TypeScript</p>
                         </div>
-                        <div class="skill-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center"><i
-                                class="fab fa-node-js text-5xl text-indigo-600 dark:text-indigo-400 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Node.js</h3>
-                            <p class="text-gray-600 dark:text-gray-300">后端开发</p>
+
+                        <!-- Skill 2 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-server text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">后端开发</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Node.js, Python, Go</p>
                         </div>
-                        <div class="skill-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center"><i
-                                class="fas fa-database text-5xl text-indigo-600 dark:text-indigo-400 mb-4"></i>
+
+                        <!-- Skill 3 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-database text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">数据库</h3>
-                            <p class="text-gray-600 dark:text-gray-300">MongoDB & MySQL</p>
+                            <p class="text-gray-600 dark:text-gray-300">MySQL, MongoDB, Redis</p>
                         </div>
-                        <div class="skill-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center"><i
-                                class="fas fa-cloud text-5xl text-indigo-600 dark:text-indigo-400 mb-4"></i>
+
+                        <!-- Skill 4 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-cloud text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">云服务</h3>
-                            <p class="text-gray-600 dark:text-gray-300">AWS & Azure</p>
+                            <p class="text-gray-600 dark:text-gray-300">AWS, Docker, Kubernetes</p>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-            <div class="container mx-auto px-6 py-8">
-                <div class="md:flex md:justify-between">
-                    <div class="mb-8 md:mb-0"><a href="index.html"
-                            class="text-xl font-bold text-indigo-600 dark:text-indigo-400">我的博客</a>
-                        <p class="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400">分享我的技术见解、独立开发经验和生活点滴。</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-8 md:gap-12">
-                        <div>
-                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">导航</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="index.html"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">首页</a>
-                                </li>
-                                <li><a href="about.html"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">关于</a>
-                                </li>
-                                <li><a href="blog.html"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">博客</a>
-                                </li>
-                                <li><a href="portfolio.html"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">作品集</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">联系</h3>
-                            <ul class="space-y-2 text-sm">
-                                <li><a href="mailto:example@example.com"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Email</a>
-                                </li>
-                                <li><a href="https://github.com/yourusername"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">GitHub</a>
-                                </li>
-                                <li><a href="https://twitter.com/yourusername"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Twitter</a>
-                                </li>
-                                <li><a href="https://linkedin.com/in/yourusername"
-                                        class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">LinkedIn</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">© 2024 我的博客. All rights reserved.
-                    </p>
-                </div>
-            </div>
-        </footer>
-        <script src="js/load-components.js"></script>
-    <script src="js/main.js"></script>
     </div>
+
+    <script>
+    // 加载调试导航栏
+    async function loadNavbar() {
+        try {
+            const response = await fetch('components/debug-navbar.html');
+            const html = await response.text();
+            document.getElementById('navbar-placeholder').innerHTML = html;
+            console.log('Debug navbar loaded successfully');
+        } catch (error) {
+            console.error('Error loading navbar:', error);
+        }
+    }
+    
+    // 页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        loadNavbar();
+    });
+    </script>
 </body>
 
 </html>

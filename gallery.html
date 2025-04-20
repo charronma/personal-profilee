@@ -1,121 +1,147 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人博客 | 相册</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-    <!-- 导航栏占位符 -->
+<body class="bg-white dark:bg-gray-900">
+    <!-- Navbar Placeholder -->
     <div id="navbar-placeholder"></div>
 
-    <!-- 主要内容区域 -->
-    <main class="pt-24">
-        <div class="container mx-auto px-6 py-12">
-            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">生活相册</h1>
-            
-            <!-- 相册分类标签 -->
-            <div class="flex flex-wrap gap-4 mb-8">
-                <button class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-colors duration-300">全部</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">旅行</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">美食</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">日常</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">风景</button>
-            </div>
-            
-            <!-- 照片网格 -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- 照片卡片 1 -->
-                <div class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="照片描述" class="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-medium">东京之旅</p>
-                            <p class="text-xs">2023-04-15</p>
+    <!-- Main Content Container -->
+    <div id="content" class="transition-opacity duration-300">
+        <main>
+            <!-- Hero Section -->
+            <section class="relative py-20 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-12 md:mb-0">
+                            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                                生活相册<br>
+                                <span class="text-blue-600 dark:text-blue-400">精彩瞬间</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                                记录生活中的美好时刻，分享旅行、美食和日常的点滴。
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#gallery" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                    浏览相册
+                                </a>
+                                <a href="/contact.html" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 transform hover:-translate-y-1">
+                                    分享照片
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                                     alt="Gallery Hero Image" 
+                                     class="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">最新更新</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- 照片卡片 2 -->
-                <div class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="照片描述" class="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-medium">美食探索</p>
-                            <p class="text-xs">2023-04-10</p>
+            <!-- Gallery Section -->
+            <section id="gallery" class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">照片分类</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">浏览不同主题的照片</p>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="flex flex-wrap justify-center gap-4 mb-12">
+                        <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1">
+                            全部
+                        </button>
+                        <button class="px-6 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                            旅行
+                        </button>
+                        <button class="px-6 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                            美食
+                        </button>
+                        <button class="px-6 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                            日常
+                        </button>
+                        <button class="px-6 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+                            风景
+                        </button>
+                    </div>
+
+                    <!-- Photo Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Photo 1 -->
+                        <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Photo 1" 
+                                 class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center p-4">
+                                    <h3 class="text-xl font-bold mb-2">东京之旅</h3>
+                                    <p class="text-sm">2023-04-15</p>
+                                    <div class="mt-4">
+                                        <button class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                            查看详情
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Photo 2" 
+                                 class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center p-4">
+                                    <h3 class="text-xl font-bold mb-2">美食探索</h3>
+                                    <p class="text-sm">2023-04-10</p>
+                                    <div class="mt-4">
+                                        <button class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                            查看详情
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Photo 3" 
+                                 class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center p-4">
+                                    <h3 class="text-xl font-bold mb-2">日常记录</h3>
+                                    <p class="text-sm">2023-04-05</p>
+                                    <div class="mt-4">
+                                        <button class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                            查看详情
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
+    </div>
 
-                <!-- 照片卡片 3 -->
-                <div class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="照片描述" class="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-medium">日常记录</p>
-                            <p class="text-xs">2023-04-05</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 照片卡片 4 -->
-                <div class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="自然风光" class="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-medium">自然风光</p>
-                            <p class="text-xs">2023-03-28</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <div class="container mx-auto px-6 py-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-8 md:mb-0">
-                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">我的博客</a>
-                    <p class="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400">分享我的技术见解、独立开发经验和生活点滴。</p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-8 md:gap-12">
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">导航</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">首页</a></li>
-                            <li><a href="about.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">关于我</a></li>
-                            <li><a href="blog.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">博客</a></li>
-                            <li><a href="portfolio.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">作品集</a></li>
-                            <li><a href="gallery.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">相册</a></li>
-                            <li><a href="contact.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">联系我</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">社交媒体</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">GitHub</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Twitter</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">LinkedIn</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">微博</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                <p class="text-center text-sm text-gray-600 dark:text-gray-400">&copy; 2023 我的个人博客. 保留所有权利.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/load-components.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/router.js"></script>
 </body>
 </html> 

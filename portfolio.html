@@ -1,121 +1,230 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品集 | 个人博客</title>
+    <title>个人博客 | 作品集</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-    <!-- 导航栏占位符 -->
+<body class="bg-white dark:bg-gray-900">
+    <!-- Navbar Placeholder -->
     <div id="navbar-placeholder"></div>
 
-    <!-- 主要内容区域 -->
-    <main class="pt-24">
-        <div class="container mx-auto px-6 py-12">
-            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">我的作品</h1>
-            
-            <!-- 作品分类标签 -->
-            <div class="flex flex-wrap gap-4 mb-8">
-                <button class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-colors duration-300">全部</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">Web 应用</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">移动应用</button>
-                <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">开源项目</button>
-            </div>
-            
-            <!-- 作品展示网格 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 作品卡片 1 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="项目预览" class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">在线教育平台</h2>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">一个基于微服务架构的在线教育平台，支持课程管理、视频直播、在线测试等功能。</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">React</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Node.js</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MongoDB</span>
+    <!-- Main Content Container -->
+    <div id="content" class="transition-opacity duration-300">
+        <main>
+            <!-- Hero Section -->
+            <section class="relative py-20 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-12 md:mb-0">
+                            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                                作品集<br>
+                                <span class="text-blue-600 dark:text-blue-400">创新与实践</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                                展示我的技术项目和创新成果，分享开发经验和解决方案。
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#featured-projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                    精选项目
+                                </a>
+                                <a href="#project-categories" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 transform hover:-translate-y-1">
+                                    分类浏览
+                                </a>
+                            </div>
                         </div>
-                        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情 →</a>
-                    </div>
-                </div>
-
-                <!-- 作品卡片 2 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="项目预览" class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">智能家居控制系统</h2>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">一个支持多设备接入的智能家居控制系统，提供远程控制、场景联动等功能。</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Vue.js</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Python</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MQTT</span>
+                        <div class="md:w-1/2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                                     alt="Portfolio Hero Image" 
+                                     class="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">持续更新</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情 →</a>
                     </div>
                 </div>
+            </section>
 
-                <!-- 作品卡片 3 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="项目预览" class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">电商平台</h2>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">一个完整的电商平台，包含商品管理、订单处理、支付系统等功能。</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Angular</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Java</span>
-                            <span class="px-3 py-1 rounded-full text-sm bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">MySQL</span>
+            <!-- Featured Projects Section -->
+            <section id="featured-projects" class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">精选项目</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">展示最具代表性的技术项目</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <article class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Project 1" 
+                                     class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4">
+                                    <span class="bg-blue-600 text-white text-sm px-3 py-1 rounded-full">Web应用</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">React</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Node.js</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">MongoDB</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                    在线教育平台
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                    一个功能完整的在线教育平台，支持课程管理、视频直播和在线测试。
+                                </p>
+                                <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                    查看详情
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Project 2 -->
+                        <article class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Project 2" 
+                                     class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4">
+                                    <span class="bg-blue-600 text-white text-sm px-3 py-1 rounded-full">移动应用</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">React Native</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Firebase</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Redux</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                    健康管理应用
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                    一款帮助用户追踪健康数据的移动应用，包含饮食记录和运动计划功能。
+                                </p>
+                                <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                    查看详情
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Project 3 -->
+                        <article class="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Project 3" 
+                                     class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute top-4 left-4">
+                                    <span class="bg-blue-600 text-white text-sm px-3 py-1 rounded-full">数据分析</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Python</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">TensorFlow</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Pandas</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                    智能推荐系统
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                    基于机器学习的个性化推荐系统，用于内容分发和用户行为分析。
+                                </p>
+                                <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                    查看详情
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Categories Section -->
+            <section id="project-categories" class="py-20 bg-gray-50 dark:bg-gray-800">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">项目分类</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">按技术领域浏览项目</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                        <!-- Category 1 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-laptop-code text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Web开发</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">React, Vue, Node.js</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                查看项目
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
-                        <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300">查看详情 →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- 页脚 -->
-    <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <div class="container mx-auto px-6 py-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-8 md:mb-0">
-                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">我的博客</a>
-                    <p class="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400">分享我的技术见解、独立开发经验和生活点滴。</p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-8 md:gap-12">
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">导航</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">首页</a></li>
-                            <li><a href="about.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">关于我</a></li>
-                            <li><a href="blog.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">博客</a></li>
-                            <li><a href="portfolio.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">作品集</a></li>
-                            <li><a href="gallery.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">相册</a></li>
-                            <li><a href="contact.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">联系我</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">社交媒体</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">GitHub</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Twitter</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">LinkedIn</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">微博</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                <p class="text-center text-sm text-gray-600 dark:text-gray-400">&copy; 2023 我的个人博客. 保留所有权利.</p>
-            </div>
-        </div>
-    </footer>
+                        <!-- Category 2 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-mobile-alt text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">移动应用</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">React Native, Flutter</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                查看项目
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
 
-    <script src="js/load-components.js"></script>
-    <script src="js/main.js"></script>
+                        <!-- Category 3 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-brain text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">人工智能</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Python, TensorFlow, PyTorch</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                查看项目
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+
+                        <!-- Category 4 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-cloud text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">云服务</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">AWS, Azure, GCP</p>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300">
+                                查看项目
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/router.js"></script>
 </body>
 </html>

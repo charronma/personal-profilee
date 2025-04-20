@@ -1,155 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联系我 | 个人博客</title>
+    <title>个人博客 | 联系我</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-    <!-- 导航栏占位符 -->
+<body class="bg-white dark:bg-gray-900">
+    <!-- Navbar Placeholder -->
     <div id="navbar-placeholder"></div>
 
-    <!-- 主要内容区域 -->
-    <main class="pt-24">
-        <div class="container mx-auto px-6 py-12">
-            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">联系我</h1>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- 联系信息 -->
-                <div class="space-y-8">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">联系方式</h2>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-envelope text-indigo-600 dark:text-indigo-400 text-xl"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">电子邮件</h3>
-                                    <p class="mt-1 text-gray-600 dark:text-gray-400">example@example.com</p>
-                                </div>
+    <!-- Main Content Container -->
+    <div id="content" class="transition-opacity duration-300">
+        <main>
+            <!-- Hero Section -->
+            <section class="relative py-20 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-12 md:mb-0">
+                            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                                联系我<br>
+                                <span class="text-blue-600 dark:text-blue-400">随时交流</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                                如果你有任何问题或合作意向，欢迎随时联系我。我会尽快回复你的消息。
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="mailto:contact@example.com" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                    <i class="fas fa-envelope mr-2"></i>发送邮件
+                                </a>
+                                <a href="#contact-form" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 transform hover:-translate-y-1">
+                                    填写表单
+                                </a>
                             </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-phone text-indigo-600 dark:text-indigo-400 text-xl"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">电话</h3>
-                                    <p class="mt-1 text-gray-600 dark:text-gray-400">+86 123 4567 8900</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-indigo-600 dark:text-indigo-400 text-xl"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">地址</h3>
-                                    <p class="mt-1 text-gray-600 dark:text-gray-400">中国，北京市，朝阳区</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                                     alt="Contact Image" 
+                                     class="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">在线</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="mt-8">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">社交媒体</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">发送消息</h2>
+                            <form id="contact-form" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                        姓名
+                                    </label>
+                                    <input type="text" id="name" name="name" required
+                                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-700 dark:text-white transition duration-300">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                        邮箱
+                                    </label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-700 dark:text-white transition duration-300">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                        主题
+                                    </label>
+                                    <input type="text" id="subject" name="subject" required
+                                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-700 dark:text-white transition duration-300">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                        消息
+                                    </label>
+                                    <textarea id="message" name="message" rows="6" required
+                                        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-700 dark:text-white resize-none transition duration-300"></textarea>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit"
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                        发送消息
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Info Section -->
+            <section class="py-20 bg-gray-50 dark:bg-gray-800">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">联系方式</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">通过以下方式快速联系我</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <!-- Email -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-envelope text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">邮箱</h3>
+                            <p class="text-gray-600 dark:text-gray-300">contact@example.com</p>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-map-marker-alt text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">地址</h3>
+                            <p class="text-gray-600 dark:text-gray-300">北京市朝阳区</p>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-share-alt text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">社交媒体</h3>
                             <div class="flex space-x-4">
-                                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
+                                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                                     <i class="fab fa-github text-2xl"></i>
                                 </a>
-                                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
-                                    <i class="fab fa-twitter text-2xl"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
+                                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                                     <i class="fab fa-linkedin text-2xl"></i>
                                 </a>
-                                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
-                                    <i class="fab fa-weibo text-2xl"></i>
+                                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                                    <i class="fab fa-twitter text-2xl"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 联系表单 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">发送消息</h2>
-                    
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">姓名</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white transition-colors duration-300" required>
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">电子邮件</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white transition-colors duration-300" required>
-                        </div>
-                        
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">主题</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white transition-colors duration-300" required>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">消息</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white transition-colors duration-300" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-300">
-                            发送消息
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
+            </section>
+        </main>
+    </div>
 
-    <!-- 页脚 -->
-    <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <div class="container mx-auto px-6 py-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-8 md:mb-0">
-                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">我的博客</a>
-                    <p class="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400">分享我的技术见解、独立开发经验和生活点滴。</p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-8 md:gap-12">
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">导航</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">首页</a></li>
-                            <li><a href="about.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">关于我</a></li>
-                            <li><a href="blog.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">博客</a></li>
-                            <li><a href="portfolio.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">作品集</a></li>
-                            <li><a href="gallery.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">相册</a></li>
-                            <li><a href="contact.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">联系我</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">社交媒体</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">GitHub</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Twitter</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">LinkedIn</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">微博</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                <p class="text-center text-sm text-gray-600 dark:text-gray-400">&copy; 2023 我的个人博客. 保留所有权利.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/load-components.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/router.js"></script>
 </body>
 </html> 

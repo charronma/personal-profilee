@@ -1,263 +1,249 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我 | 个人博客</title>
+    <title>个人博客 | 关于我</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-    <!-- 引入导航栏组件 -->
+<body class="bg-white dark:bg-gray-900">
+    <!-- Navbar Placeholder -->
     <div id="navbar-placeholder"></div>
 
-    <!-- 主要内容区域 -->
-    <main class="pt-24">
-        <!-- 个人介绍 -->
-        <section class="pt-24 pb-16 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/3 mb-8 md:mb-0">
-                        <div class="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="个人照片" class="rounded-full w-64 h-64 object-cover mx-auto md:mx-0">
+    <!-- Main Content Container -->
+    <div id="content" class="transition-opacity duration-300">
+        <main>
+            <!-- Hero Section -->
+            <section class="relative py-20 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-12 md:mb-0">
+                            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                                关于我<br>
+                                <span class="text-blue-600 dark:text-blue-400">技术探索者</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                                我是一名充满热情的全栈开发工程师，专注于构建现代化的 Web 应用。热爱技术，喜欢探索新的开发工具和框架。
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="/contact.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                                    联系我
+                                </a>
+                                <a href="/portfolio.html" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 transform hover:-translate-y-1">
+                                    查看作品
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="md:w-2/3 md:pl-12 text-center md:text-left">
-                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">你好，我是小明</h1>
-                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">后端工程师 | Golang 开发者 | 独立开发探索者</p>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            我目前是一名后端工程师，在字节跳动使用 Golang 进行后端开发工作。我拥有5年的软件开发经验，专注于高性能、可扩展的系统设计和实现。热爱编程和技术创新，同时也在探索独立开发的方法和SOP，希望能够创造有价值、有意义的产品来帮助他人。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 技能展示 -->
-        <section class="py-16 bg-white dark:bg-gray-800">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">专业技能</h2>
-                    <div class="w-16 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto"></div>
-                </div>
-                
-                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 技能卡片 1：后端开发 -->
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="text-indigo-600 dark:text-indigo-400 mb-4">
-                            <i class="fas fa-code text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">后端开发</h3>
-                        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                Golang & Python 开发
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                微服务架构设计
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                RESTful API 开发
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 技能卡片 2：数据库 -->
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="text-indigo-600 dark:text-indigo-400 mb-4">
-                            <i class="fas fa-database text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">数据库</h3>
-                        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                MySQL & PostgreSQL
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                Redis 缓存设计
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                数据库性能优化
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 技能卡片 3：DevOps -->
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="text-indigo-600 dark:text-indigo-400 mb-4">
-                            <i class="fas fa-server text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">DevOps</h3>
-                        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                Docker & Kubernetes
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                CI/CD 流程设计
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2 text-xs"></i>
-                                云服务架构
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 个人爱好 -->
-        <section class="py-16 bg-gray-50 dark:bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">个人爱好</h2>
-                    <div class="w-16 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto"></div>
-                </div>
-                
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- 爱好卡片 1：摄影 -->
-                    <div class="group bg-white dark:bg-gray-800 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
-                                    <i class="fas fa-camera text-lg text-indigo-600 dark:text-indigo-400 group-hover:text-white"></i>
+                        <div class="md:w-1/2">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" 
+                                     alt="Profile Image" 
+                                     class="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">在线</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">摄影</h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">热爱用镜头记录生活中的美好瞬间，擅长风光和人文摄影。通过摄影，我学会了用不同的视角观察世界。</p>
-                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <!-- 爱好卡片 2：阅读 -->
-                    <div class="group bg-white dark:bg-gray-800 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
-                                    <i class="fas fa-book text-lg text-indigo-600 dark:text-indigo-400 group-hover:text-white"></i>
+            <!-- Skills Section -->
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">技术专长</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">掌握多种技术栈，持续学习和进步</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <!-- Frontend Skills -->
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-code text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">前端开发</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    React & Vue.js
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    TypeScript
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Tailwind CSS
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Backend Skills -->
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-server text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">后端开发</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Node.js
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Python
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Go
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Database Skills -->
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-database text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">数据库</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    MySQL
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    MongoDB
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Redis
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- DevOps Skills -->
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                                <i class="fas fa-cloud text-3xl text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">DevOps</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Docker
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    Kubernetes
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mr-2"></i>
+                                    AWS
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="py-20 bg-gray-50 dark:bg-gray-800">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">工作经历</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">在技术领域的成长历程</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <!-- Experience 1 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg mb-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-xl text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">高级全栈开发工程师</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-2">某科技公司 • 2020 - 至今</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        负责公司核心产品的全栈开发，包括前端界面设计、后端API开发、数据库优化等工作。
+                                        带领团队完成多个重要项目，提升了系统性能和用户体验。
+                                    </p>
                                 </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">阅读</h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">喜欢阅读技术书籍和文学作品，通过阅读拓展视野，获取新知识和灵感。每月至少阅读一本新书。</p>
-                            </div>
                         </div>
-                    </div>
 
-                    <!-- 爱好卡片 3：旅行 -->
-                    <div class="group bg-white dark:bg-gray-800 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
-                                    <i class="fas fa-plane text-lg text-indigo-600 dark:text-indigo-400 group-hover:text-white"></i>
+                        <!-- Experience 2 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg mb-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-xl text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">前端开发工程师</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-2">某互联网公司 • 2018 - 2020</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        负责公司多个产品的前端开发工作，使用React和Vue.js构建现代化的用户界面。
+                                        优化了前端性能，提升了用户体验。
+                                    </p>
                                 </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">旅行</h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">喜欢探索不同的城市和文化，体验不同的生活方式。旅行让我保持开放的心态，激发创造力。</p>
-                            </div>
                         </div>
-                    </div>
 
-                    <!-- 爱好卡片 4：编程创造 -->
-                    <div class="group bg-white dark:bg-gray-800 rounded-xl p-6 transform hover:-translate-y-1 transition-all duration-300">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mr-4">
-                                <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
-                                    <i class="fas fa-laptop-code text-lg text-indigo-600 dark:text-indigo-400 group-hover:text-white"></i>
+                        <!-- Experience 3 -->
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-xl text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">初级开发工程师</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-2">某软件公司 • 2016 - 2018</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        参与公司多个项目的开发工作，积累了丰富的开发经验。
+                                        学习了多种编程语言和框架，打下了坚实的技术基础。
+                                    </p>
                                 </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">编程创造</h3>
-                                <p class="text-gray-600 dark:text-gray-300 text-sm">热爱编程不仅是工作，更是一种爱好。喜欢通过代码创造有趣的项目，解决实际问题。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">教育背景</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">学习经历和专业知识</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-xl text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">计算机科学与技术 硕士</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-2">某知名大学 • 2014 - 2016</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        主修计算机科学与技术，研究方向为软件工程和人工智能。
+                                        在校期间参与多个科研项目，发表了多篇学术论文。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+    </div>
 
-        <!-- 生活照片 -->
-        <section class="py-16 bg-white dark:bg-gray-800">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">生活瞬间</h2>
-                    <div class="w-16 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto"></div>
-                </div>
-
-                <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="生活照片" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="生活照片" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="生活照片" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1518173946687-a4c889485bbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="生活照片" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                    </div>
-                </div>
-
-                <div class="text-center mt-8">
-                    <a href="gallery.html" class="inline-block px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg shadow-md hover:bg-indigo-700 transition-colors duration-300">
-                        查看更多照片
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <div class="container mx-auto px-6 py-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-8 md:mb-0">
-                    <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">我的博客</a>
-                    <p class="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400">分享我的技术见解、独立开发经验和生活点滴。</p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-8 md:gap-12">
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">导航</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">首页</a></li>
-                            <li><a href="about.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">关于我</a></li>
-                            <li><a href="blog.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">博客</a></li>
-                            <li><a href="portfolio.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">作品集</a></li>
-                            <li><a href="gallery.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">相册</a></li>
-                            <li><a href="contact.html" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">联系我</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">社交媒体</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">GitHub</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Twitter</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">LinkedIn</a></li>
-                            <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">微博</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                <p class="text-center text-sm text-gray-600 dark:text-gray-400">&copy; 2023 我的个人博客. 保留所有权利.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/load-components.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/router.js"></script>
 </body>
 </html> 

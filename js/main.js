@@ -1,33 +1,65 @@
 // 主要脚本文件
 
-// 等待DOM加载完成
-document.addEventListener('DOMContentLoaded', async function() {
-    // 加载导航栏
+import componentLoader from './load-components.js';
+
+// 预加载导航栏
+async function preloadNavbar() {
     try {
+        // 使用预加载的导航栏内容
         const response = await fetch('components/navbar.html');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const html = await response.text();
-        
-        // 插入导航栏
-        const navbarPlaceholder = document.getElementById('navbar-placeholder');
-        if (navbarPlaceholder) {
-            navbarPlaceholder.innerHTML = html;
-        }
-        
-        // 初始化导航栏功能
-        initializeNavbar();
-        
-        // 初始化移动菜单
-        initMobileMenu();
+        if (!response.ok) throw new Error('Failed to load navbar');
+        return await response.text();
     } catch (error) {
-        console.error('Error loading navigation bar:', error);
+        console.error('Error loading navbar:', error);
+        return null;
     }
-});
+}
+
+// 初始化导航栏
+async function initializeNavbar() {
+    const navbarPlaceholder = document.getElementById('navbar-placeholder');
+    if (!navbarPlaceholder) return;
+
+    try {
+        // 使用组件加载器加载导航栏
+        const success = await componentLoader.loadAndInsert('navbar', navbarPlaceholder);
+        if (success) {
+            // 使用 requestAnimationFrame 确保平滑过渡
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const navbar = document.querySelector('nav');
+                    if (navbar) {
+                        navbar.style.opacity = '0';
+                        navbar.style.visibility = 'visible';
+                        // 触发重排以确保过渡效果
+                        navbar.offsetHeight;
+                        navbar.style.opacity = '1';
+                        navbar.style.transition = 'opacity 0.3s ease';
+                    }
+                    // 初始化导航栏功能
+                    initNavbarFunctions();
+                });
+            });
+        }
+    } catch (error) {
+        console.error('Failed to initialize navbar:', error);
+    }
+}
+
+// 初始化页脚
+async function initializeFooter() {
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (!footerPlaceholder) return;
+
+    try {
+        await componentLoader.loadAndInsert('footer', footerPlaceholder);
+    } catch (error) {
+        console.error('Failed to initialize footer:', error);
+    }
+}
 
 // 初始化导航栏功能
-function initializeNavbar() {
+function initNavbarFunctions() {
     // 主题切换功能
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
@@ -173,6 +205,12 @@ function setActiveLink() {
         }
     });
 }
+
+// 确保在 DOM 加载完成后初始化
+document.addEventListener('DOMContentLoaded', async () => {
+    await initializeNavbar();
+    await initializeFooter();
+});
 
 // 监听页面状态变化
 window.addEventListener('popstate', () => {
